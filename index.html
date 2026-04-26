@@ -1,320 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Luna Services – Money Transfer & Financial Services</title>
-  <meta name="description" content="Luna Services, a DBA of Millennials Wireless, offers reliable money transfer and remittance services in Oxnard, CA. Send money safely to Mexico and Latin America."/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <title>ANS Wireless – Money Transfer Services | Oxnard, CA</title>
+  <meta name="description" content="ANS Wireless, a DBA of Millennials Wireless, provides licensed money transfer and remittance services in Oxnard, CA. Send money to Mexico and Latin America safely."/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
-      --gold: #C8962A;
-      --gold-light: #E8B84B;
-      --navy: #0A1628;
-      --navy-mid: #112240;
-      --cream: #F5F0E8;
-      --text: #1a1a2e;
-      --muted: #6B7280;
+      --ink: #0D0D0D;
+      --paper: #F7F4EE;
+      --gold: #B8861A;
+      --gold-lt: #D4A843;
+      --white: #FFFFFF;
+      --gray: #6B6B6B;
+      --border: #E2DDD4;
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      overflow-x: hidden;
-    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; background: var(--paper); color: var(--ink); overflow-x: hidden; }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 2.5rem;
-      background: rgba(10,22,40,0.96);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(200,150,42,0.3);
+      padding: 1.25rem 3rem;
+      background: rgba(13,13,13,0.97);
+      border-bottom: 1px solid rgba(184,134,26,0.25);
     }
-    .nav-logo {
-      display: flex; align-items: center; gap: 0.75rem;
-    }
-    .logo-circle {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    .nav-logo { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
+    .logo-mark {
+      width: 40px; height: 40px;
+      border: 1.5px solid var(--gold);
       display: flex; align-items: center; justify-content: center;
-      font-family: 'Playfair Display', serif; font-weight: 900;
-      color: var(--navy); font-size: 1.1rem;
+      font-family: 'Cormorant Garamond', serif; font-weight: 700;
+      color: var(--gold); font-size: 1rem; letter-spacing: 0.05em;
     }
-    .nav-brand { color: #fff; font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; letter-spacing: 0.02em; }
-    .nav-brand span { color: var(--gold-light); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--gold-light); }
-    .nav-cta {
-      background: var(--gold); color: var(--navy);
-      padding: 0.55rem 1.4rem; border-radius: 4px;
-      text-decoration: none; font-weight: 600; font-size: 0.9rem;
-      transition: background 0.2s;
+    .nav-name { color: var(--white); font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; letter-spacing: 0.04em; }
+    .nav-name span { color: var(--gold-lt); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold-lt); }
+    .lang-row { display: flex; align-items: center; gap: 1.5rem; }
+    .lang-a { color: rgba(255,255,255,0.4); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+    .lang-a.active, .lang-a:hover { color: var(--gold-lt); }
+    .nav-btn {
+      border: 1px solid var(--gold); color: var(--gold);
+      padding: 0.5rem 1.4rem; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s, color 0.2s;
     }
-    .nav-cta:hover { background: var(--gold-light); }
+    .nav-btn:hover { background: var(--gold); color: var(--ink); }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
-      background: var(--navy);
-      display: flex; align-items: center;
+      min-height: 100vh; background: var(--ink);
+      display: grid; grid-template-columns: 1fr 1fr;
       position: relative; overflow: hidden;
-      padding: 7rem 2.5rem 4rem;
     }
-    .hero::before {
-      content: '';
-      position: absolute; top: -20%; right: -10%;
-      width: 600px; height: 600px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(200,150,42,0.15) 0%, transparent 70%);
+    .hero-left {
+      padding: 10rem 3rem 5rem 3rem;
+      display: flex; flex-direction: column; justify-content: center;
+      position: relative; z-index: 1;
     }
-    .hero::after {
-      content: '';
-      position: absolute; bottom: -10%; left: -5%;
-      width: 400px; height: 400px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(200,150,42,0.08) 0%, transparent 70%);
-    }
-    .hero-inner {
-      max-width: 1100px; margin: 0 auto; position: relative; z-index: 1;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
-    }
-    .hero-tag {
-      display: inline-block; background: rgba(200,150,42,0.15);
-      border: 1px solid rgba(200,150,42,0.4);
-      color: var(--gold-light); font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 0.4rem 1rem; border-radius: 2px; margin-bottom: 1.5rem;
+    .hero-eyebrow {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem;
     }
     .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 5vw, 4rem);
-      font-weight: 900; line-height: 1.1;
-      color: #fff; margin-bottom: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 5.5vw, 5rem);
+      font-weight: 600; line-height: 1.05;
+      color: var(--white); margin-bottom: 1.8rem;
     }
-    .hero h1 em { color: var(--gold-light); font-style: normal; }
-    .hero p {
-      color: rgba(255,255,255,0.65); font-size: 1.1rem; line-height: 1.7;
-      margin-bottom: 2rem; font-weight: 300;
+    .hero h1 em { color: var(--gold-lt); font-style: italic; }
+    .hero-sub {
+      color: rgba(255,255,255,0.5); font-size: 1rem;
+      line-height: 1.75; font-weight: 300; max-width: 420px;
+      margin-bottom: 2.5rem;
     }
-    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--gold); color: var(--navy);
-      padding: 0.85rem 2rem; border-radius: 4px;
-      text-decoration: none; font-weight: 700; font-size: 0.95rem;
-      transition: background 0.2s, transform 0.15s;
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-gold {
+      background: var(--gold); color: var(--ink);
+      padding: 0.85rem 2.2rem; font-weight: 600; font-size: 0.85rem;
+      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s;
     }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
-    .btn-ghost {
-      border: 1px solid rgba(200,150,42,0.5); color: var(--gold-light);
-      padding: 0.85rem 2rem; border-radius: 4px;
-      text-decoration: none; font-weight: 500; font-size: 0.95rem;
-      transition: border-color 0.2s, background 0.2s;
+    .btn-gold:hover { background: var(--gold-lt); }
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.7);
+      padding: 0.85rem 2.2rem; font-weight: 500; font-size: 0.85rem;
+      letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
     }
-    .btn-ghost:hover { background: rgba(200,150,42,0.1); border-color: var(--gold-light); }
-
-    /* hero card */
-    .hero-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(200,150,42,0.2);
-      border-radius: 12px; padding: 2.5rem;
-      backdrop-filter: blur(10px);
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold-lt); }
+    .hero-right {
+      background: #141414;
+      border-left: 1px solid rgba(184,134,26,0.15);
+      padding: 10rem 3rem 5rem;
+      display: flex; flex-direction: column; justify-content: center; gap: 1px;
     }
-    .hero-card h3 {
-      font-family: 'Playfair Display', serif;
-      color: var(--gold-light); font-size: 1.1rem; margin-bottom: 1.5rem;
+    .hero-stat {
+      padding: 1.8rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
-    .stat-row { display: flex; flex-direction: column; gap: 1.2rem; }
-    .stat { display: flex; align-items: center; gap: 1rem; }
-    .stat-icon {
-      width: 44px; height: 44px; border-radius: 8px;
-      background: rgba(200,150,42,0.15);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem; flex-shrink: 0;
-    }
-    .stat-label { color: rgba(255,255,255,0.55); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
-    .stat-value { color: #fff; font-weight: 600; font-size: 0.95rem; }
+    .hero-stat:last-child { border: none; }
+    .stat-label { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 0.5rem; }
+    .stat-value { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--white); }
+    .stat-value span { color: var(--gold-lt); font-style: italic; }
 
     /* ── SECTION BASE ── */
-    section { padding: 6rem 2.5rem; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-tag {
-      display: inline-block; color: var(--gold); font-size: 0.78rem;
-      font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      font-weight: 900; line-height: 1.15; margin-bottom: 1rem;
-    }
-    .section-sub { color: var(--muted); font-size: 1.05rem; max-width: 560px; line-height: 1.7; }
+    .section { padding: 7rem 3rem; }
+    .section-inner { max-width: 1140px; margin: 0 auto; }
+    .eyebrow { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; font-weight: 600; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 600; line-height: 1.1; margin-bottom: 1.2rem; }
+    .section-sub { color: var(--gray); font-size: 1rem; line-height: 1.75; max-width: 520px; }
 
     /* ── SERVICES ── */
-    #services { background: #fff; }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem; margin-top: 3rem;
-    }
+    #services { background: var(--white); }
+    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); }
     .service-card {
-      border: 1px solid #E5E7EB; border-radius: 10px;
-      padding: 2rem; transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+      background: var(--white); padding: 2.5rem;
+      transition: background 0.25s;
     }
-    .service-card:hover {
-      border-color: var(--gold); transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(200,150,42,0.12);
-    }
-    .service-icon {
-      width: 54px; height: 54px; border-radius: 10px;
-      background: linear-gradient(135deg, rgba(200,150,42,0.12), rgba(200,150,42,0.05));
-      border: 1px solid rgba(200,150,42,0.25);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; margin-bottom: 1.2rem;
-    }
-    .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 0.6rem; color: var(--navy); }
-    .service-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.65; }
-    .service-partners { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
-    .partner-tag {
-      background: var(--cream); color: var(--text);
-      font-size: 0.72rem; font-weight: 600; padding: 0.25rem 0.6rem;
-      border-radius: 3px; border: 1px solid #E5E7EB; letter-spacing: 0.04em;
-    }
+    .service-card:hover { background: #FDFAF4; }
+    .svc-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 600; color: rgba(184,134,26,0.15); line-height: 1; margin-bottom: 1.2rem; }
+    .svc-title { font-weight: 600; font-size: 1rem; margin-bottom: 0.75rem; color: var(--ink); letter-spacing: 0.02em; }
+    .svc-body { color: var(--gray); font-size: 0.88rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .svc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .svc-tag { border: 1px solid var(--border); color: var(--gray); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 0.25rem 0.7rem; }
 
-    /* ── HOW IT WORKS ── */
-    #how { background: var(--cream); }
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; }
-    .step { text-align: center; }
-    .step-num {
-      width: 60px; height: 60px; border-radius: 50%;
-      background: var(--navy); color: var(--gold-light);
-      font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 1.2rem;
+    /* ── HOW ── */
+    #how { background: var(--paper); }
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; margin-top: 4rem; }
+    .how-step { position: relative; }
+    .how-step::after {
+      content: '→';
+      position: absolute; top: 1rem; right: -1.8rem;
+      color: var(--gold); font-size: 1.2rem;
     }
-    .step h3 { font-weight: 700; margin-bottom: 0.5rem; color: var(--navy); }
-    .step p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+    .how-step:last-child::after { display: none; }
+    .how-num { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 700; color: rgba(184,134,26,0.12); line-height: 1; margin-bottom: 1rem; }
+    .how-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--ink); }
+    .how-body { color: var(--gray); font-size: 0.85rem; line-height: 1.65; }
 
-    /* ── SMS OPT-IN ── */
-    #sms {
-      background: var(--navy);
-      color: #fff;
-    }
-    #sms .section-title { color: #fff; }
-    #sms .section-sub { color: rgba(255,255,255,0.6); }
+    /* ── SMS ── */
+    #sms { background: var(--ink); color: var(--white); }
+    #sms .section-title { color: var(--white); }
+    #sms .section-sub { color: rgba(255,255,255,0.5); }
+    .sms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 4rem; align-items: start; }
+    .sms-info h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--gold-lt); margin-bottom: 1rem; font-style: italic; }
+    .sms-info p { color: rgba(255,255,255,0.55); line-height: 1.8; font-size: 0.92rem; margin-bottom: 1rem; }
+    .kw-row { display: flex; gap: 0.6rem; flex-wrap: wrap; margin: 1.2rem 0; }
+    .kw { border: 1px solid var(--gold); color: var(--gold); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.4rem 1rem; }
+    .sms-disclaimer { font-size: 0.75rem; color: rgba(255,255,255,0.3); line-height: 1.7; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.2rem; margin-top: 1.2rem; }
     .sms-box {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(200,150,42,0.25);
-      border-radius: 12px; padding: 2.5rem;
-      margin-top: 3rem;
+      border: 1px solid rgba(184,134,26,0.25);
+      padding: 2.5rem;
     }
-    .sms-box h3 { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 1.3rem; margin-bottom: 1rem; }
-    .sms-box p { color: rgba(255,255,255,0.65); line-height: 1.75; margin-bottom: 1rem; font-size: 0.95rem; }
-    .sms-disclaimer {
-      font-size: 0.82rem; color: rgba(255,255,255,0.4);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 1rem; line-height: 1.7;
-    }
-    .sms-keywords {
-      display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1rem 0;
-    }
-    .keyword {
-      background: rgba(200,150,42,0.15); border: 1px solid rgba(200,150,42,0.4);
-      color: var(--gold-light); padding: 0.35rem 0.9rem; border-radius: 4px;
-      font-size: 0.85rem; font-weight: 700; letter-spacing: 0.05em;
-    }
+    .sms-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); font-size: 0.88rem; }
+    .sms-row:last-child { border: none; }
+    .sms-row-label { color: rgba(255,255,255,0.4); letter-spacing: 0.05em; font-size: 0.78rem; text-transform: uppercase; }
+    .sms-row-val { color: var(--white); font-weight: 500; text-align: right; }
 
     /* ── ABOUT ── */
-    #about { background: #fff; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem; }
-    .about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
-    .about-text strong { color: var(--navy); }
-    .about-info { display: flex; flex-direction: column; gap: 1.2rem; }
-    .info-card {
-      background: var(--cream); border-radius: 8px;
-      padding: 1.5rem; border-left: 3px solid var(--gold);
-    }
-    .info-card h4 { font-weight: 700; color: var(--navy); margin-bottom: 0.4rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
-    .info-card p { color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
-    .info-card a { color: var(--gold); text-decoration: none; }
+    #about { background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; margin-top: 4rem; align-items: start; }
+    .about-text p { color: var(--gray); line-height: 1.85; margin-bottom: 1.2rem; font-size: 0.95rem; }
+    .about-text strong { color: var(--ink); }
+    .about-cards { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--border); }
+    .about-card { padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); }
+    .about-card:last-child { border: none; }
+    .about-card-label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem; font-weight: 600; }
+    .about-card-val { color: var(--ink); font-size: 0.92rem; line-height: 1.6; }
 
     /* ── CONTACT ── */
-    #contact { background: var(--cream); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem; align-items: start; }
-    .contact-info { display: flex; flex-direction: column; gap: 1.2rem; }
-    .contact-card {
-      background: #fff; border-radius: 8px; padding: 1.5rem;
-      border: 1px solid #E5E7EB; display: flex; gap: 1rem; align-items: flex-start;
+    #contact { background: var(--paper); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 4rem; align-items: start; }
+    .contact-locations { display: flex; flex-direction: column; gap: 2rem; }
+    .location-card { border-left: 2px solid var(--gold); padding-left: 1.5rem; }
+    .loc-name { font-weight: 600; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 0.5rem; }
+    .loc-addr { color: var(--gray); font-size: 0.9rem; line-height: 1.6; }
+    .loc-phone { color: var(--gold); font-weight: 600; font-size: 0.9rem; margin-top: 0.4rem; text-decoration: none; display: block; }
+    .contact-form-wrap { background: var(--white); border: 1px solid var(--border); padding: 2.5rem; }
+    .contact-form-wrap h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; margin-bottom: 1.5rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .field { margin-bottom: 1rem; }
+    .field label { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.5rem; }
+    .field input, .field textarea {
+      width: 100%; padding: 0.75rem 1rem;
+      border: 1px solid var(--border); background: var(--paper);
+      font-family: 'Outfit', sans-serif; font-size: 0.9rem; color: var(--ink);
+      transition: border-color 0.2s; outline: none;
     }
-    .contact-icon { font-size: 1.4rem; flex-shrink: 0; }
-    .contact-card h4 { font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; font-size: 0.9rem; }
-    .contact-card p, .contact-card a { color: var(--muted); font-size: 0.9rem; text-decoration: none; line-height: 1.6; }
-    .contact-card a:hover { color: var(--gold); }
-    .contact-form { background: #fff; border-radius: 10px; padding: 2rem; border: 1px solid #E5E7EB; }
-    .contact-form h3 { font-family: 'Playfair Display', serif; margin-bottom: 1.5rem; color: var(--navy); }
-    .form-group { margin-bottom: 1rem; }
-    .form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 0.7rem 1rem; border: 1px solid #E5E7EB;
-      border-radius: 6px; font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem; color: var(--text); background: var(--cream);
-      transition: border-color 0.2s;
+    .field input:focus, .field textarea:focus { border-color: var(--gold); }
+    .field textarea { resize: vertical; min-height: 100px; }
+    .optin-row { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 1.2rem; }
+    .optin-row input[type=checkbox] { margin-top: 3px; flex-shrink: 0; accent-color: var(--gold); }
+    .optin-row label { font-size: 0.8rem; color: var(--gray); line-height: 1.6; cursor: pointer; }
+    .btn-submit {
+      background: var(--ink); color: var(--white);
+      border: none; width: 100%; padding: 0.9rem;
+      font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 0.85rem;
+      letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;
+      transition: background 0.2s;
     }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      outline: none; border-color: var(--gold);
-    }
-    .form-group textarea { resize: vertical; min-height: 100px; }
-    .form-submit {
-      background: var(--gold); color: var(--navy);
-      border: none; padding: 0.85rem 2rem; border-radius: 4px;
-      font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 0.95rem;
-      cursor: pointer; transition: background 0.2s; width: 100%;
-    }
-    .form-submit:hover { background: var(--gold-light); }
-    .sms-optin-note {
-      font-size: 0.78rem; color: var(--muted); margin-top: 0.75rem; line-height: 1.6;
-    }
+    .btn-submit:hover { background: var(--gold); color: var(--ink); }
+    .optin-fine { font-size: 0.72rem; color: #AAA; line-height: 1.6; margin-top: 0.75rem; }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--navy); color: rgba(255,255,255,0.5);
-      padding: 3rem 2.5rem;
-      text-align: center; font-size: 0.88rem; line-height: 1.8;
-    }
-    footer strong { color: rgba(255,255,255,0.85); }
-    footer a { color: var(--gold-light); text-decoration: none; }
-    .footer-top {
-      display: flex; justify-content: space-between; align-items: flex-start;
-      max-width: 1100px; margin: 0 auto 2rem; flex-wrap: wrap; gap: 2rem;
-    }
-    .footer-brand .nav-brand { font-size: 1.4rem; display: block; margin-bottom: 0.5rem; }
-    .footer-brand p { font-size: 0.85rem; max-width: 300px; line-height: 1.6; }
-    .footer-links h4 { color: rgba(255,255,255,0.8); font-size: 0.85rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; }
-    .footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
-    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--gold-light); }
-    .footer-divider { max-width: 1100px; margin: 0 auto 1.5rem; border: none; border-top: 1px solid rgba(255,255,255,0.1); }
-    .footer-bottom { max-width: 1100px; margin: 0 auto; }
+    footer { background: var(--ink); color: rgba(255,255,255,0.35); padding: 3.5rem 3rem; }
+    .footer-inner { max-width: 1140px; margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); margin-bottom: 2rem; }
+    .footer-brand .nav-name { font-size: 1.5rem; display: block; margin-bottom: 0.4rem; }
+    .footer-brand p { font-size: 0.82rem; max-width: 280px; line-height: 1.65; }
+    .footer-col h4 { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 1rem; font-weight: 600; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col a { color: rgba(255,255,255,0.35); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--gold-lt); }
+    .footer-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.78rem; }
+    .footer-bottom a { color: var(--gold-lt); text-decoration: none; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 768px) {
-      .hero-inner, .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .hero-card { display: none; }
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-right { display: none; }
+      .how-grid { grid-template-columns: 1fr 1fr; }
+      .sms-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
       .nav-links { display: none; }
-      .footer-top { flex-direction: column; }
+      nav { padding: 1.2rem 1.5rem; }
+      .section { padding: 5rem 1.5rem; }
+      .hero-left { padding: 8rem 1.5rem 4rem; }
+    }
+    @media (max-width: 600px) {
+      .how-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .how-step::after { display: none; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <div class="logo-circle">LS</div>
-    <span class="nav-brand">Luna <span>Services</span></span>
-  </div>
+  <a href="index.html" class="nav-logo">
+    <div class="logo-mark">AW</div>
+    <span class="nav-name">ANS <span>Wireless</span></span>
+  </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#how">How It Works</a></li>
@@ -322,186 +255,189 @@
     <li><a href="#about">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div style="display:flex;align-items:center;gap:1.2rem;">
-    <a href="index.html" style="color:var(--gold-light);text-decoration:none;font-size:0.8rem;font-weight:700;letter-spacing:0.06em;">EN</a>
-    <a href="index-es.html" style="color:rgba(255,255,255,0.45);text-decoration:none;font-size:0.8rem;font-weight:600;letter-spacing:0.06em;">ES</a>
-    <a href="#contact" class="nav-cta">Contact Us</a>
+  <div class="lang-row">
+    <a href="index.html" class="lang-a active">EN</a>
+    <a href="index-es.html" class="lang-a">ES</a>
+    <a href="#contact" class="nav-btn">Contact Us</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-tag">Licensed Money Transfer – Oxnard, CA</div>
-      <h1>Send Money <em>Home</em> Safely & Reliably</h1>
-      <p>Luna Services provides trusted remittance and financial services to families across Mexico and Latin America. Fast transfers, competitive rates, and personal service — right here in Oxnard.</p>
-      <div class="hero-btns">
-        <a href="#services" class="btn-primary">Our Services</a>
-        <a href="#contact" class="btn-ghost">Find a Location</a>
-      </div>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Licensed Money Services Business &nbsp;·&nbsp; Oxnard, CA</p>
+    <h1>Send Money<br/>Home with<br/><em>Confidence</em></h1>
+    <p class="hero-sub">ANS Wireless provides trusted international money transfer and remittance services for families across Mexico and Latin America — with competitive rates and personal service.</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-gold">Our Services</a>
+      <a href="#contact" class="btn-outline">Find a Location</a>
     </div>
-    <div class="hero-card">
-      <h3>Why Choose Luna Services?</h3>
-      <div class="stat-row">
-        <div class="stat">
-          <div class="stat-icon">🏦</div>
-          <div>
-            <div class="stat-label">Licensed & Regulated</div>
-            <div class="stat-value">CA DFPI Licensed MSB</div>
-          </div>
-        </div>
-        <div class="stat">
-          <div class="stat-icon">🌐</div>
-          <div>
-            <div class="stat-label">Network Partners</div>
-            <div class="stat-value">5+ Remittance Platforms</div>
-          </div>
-        </div>
-        <div class="stat">
-          <div class="stat-icon">📍</div>
-          <div>
-            <div class="stat-label">Locations</div>
-            <div class="stat-value">2 Locations in Oxnard, CA</div>
-          </div>
-        </div>
-        <div class="stat">
-          <div class="stat-icon">📲</div>
-          <div>
-            <div class="stat-label">SMS Rate Alerts</div>
-            <div class="stat-value">Opt-in for Daily Updates</div>
-          </div>
-        </div>
-      </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-stat">
+      <div class="stat-label">Legal Entity</div>
+      <div class="stat-value">Millennials Wireless <span>DBA</span> ANS Wireless</div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-label">License</div>
+      <div class="stat-value">CA DFPI Licensed <span>MSB</span></div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-label">Remittance Networks</div>
+      <div class="stat-value">5+ <span>Partner Platforms</span></div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-label">Locations</div>
+      <div class="stat-value">2 <span>Locations in Oxnard</span></div>
+    </div>
+    <div class="hero-stat">
+      <div class="stat-label">SMS Alerts</div>
+      <div class="stat-value">Text <span>DOLAR</span> for Today's Rate</div>
     </div>
   </div>
 </section>
 
 <!-- SERVICES -->
-<section id="services">
+<section class="section" id="services">
   <div class="section-inner">
-    <div class="section-tag">What We Offer</div>
-    <h2 class="section-title">Complete Financial Services</h2>
-    <p class="section-sub">We partner with the most trusted remittance networks to give you the best rates and fastest delivery times.</p>
+    <div class="services-header">
+      <div>
+        <p class="eyebrow">What We Offer</p>
+        <h2 class="section-title">Complete Financial<br/>Transfer Services</h2>
+      </div>
+      <p class="section-sub">We partner with the most trusted remittance networks to deliver competitive rates and fast, reliable transfers.</p>
+    </div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">💸</div>
-        <h3>International Money Transfers</h3>
-        <p>Send money to Mexico and Latin America quickly and securely through our extensive network of partners.</p>
-        <div class="service-partners">
-          <span class="partner-tag">Viamericas</span>
-          <span class="partner-tag">MoneyGram</span>
-          <span class="partner-tag">Vigo</span>
-          <span class="partner-tag">Intermex</span>
+        <div class="svc-num">01</div>
+        <div class="svc-title">International Money Transfers</div>
+        <p class="svc-body">Send money to Mexico and Latin America quickly and securely through our extensive network of licensed remittance partners.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Viamericas</span>
+          <span class="svc-tag">MoneyGram</span>
+          <span class="svc-tag">Vigo</span>
+          <span class="svc-tag">Intermex</span>
         </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">🌎</div>
-        <h3>Remittance Services</h3>
-        <p>Additional remittance options to ensure we find the best rate and delivery method for every customer.</p>
-        <div class="service-partners">
-          <span class="partner-tag">Orlandi Valuta</span>
+        <div class="svc-num">02</div>
+        <div class="svc-title">Additional Remittance Options</div>
+        <p class="svc-body">More transfer options to ensure we always find the best rate and delivery method available for every customer.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Orlandi Valuta</span>
         </div>
       </div>
       <div class="service-card">
-        <div class="service-icon">📈</div>
-        <h3>Exchange Rate Updates</h3>
-        <p>Get the latest exchange rates by visiting us or opting in to our SMS notification service for daily rate alerts.</p>
+        <div class="svc-num">03</div>
+        <div class="svc-title">Exchange Rate Alerts</div>
+        <p class="svc-body">Text DOLAR to (805) 303-3313 to receive today's exchange rates instantly, or subscribe to our SMS alert program for daily updates.</p>
       </div>
       <div class="service-card">
-        <div class="service-icon">👤</div>
-        <h3>Personal Service</h3>
-        <p>Our bilingual staff is ready to assist you in English and Spanish. Walk in or call us — no appointment needed.</p>
+        <div class="svc-num">04</div>
+        <div class="svc-title">Bilingual Personal Service</div>
+        <p class="svc-body">Our bilingual staff assists you in both English and Spanish. Walk in at either Oxnard location — no appointment needed.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section id="how">
+<section class="section" id="how">
   <div class="section-inner">
-    <div class="section-tag">Simple Process</div>
+    <p class="eyebrow">Simple Process</p>
     <h2 class="section-title">How It Works</h2>
-    <p class="section-sub">Sending money with Luna Services is easy, fast, and secure.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Visit a Location</h3>
-        <p>Come to either of our two Oxnard locations. Our friendly bilingual staff will greet you.</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">01</div>
+        <div class="how-title">Visit a Location</div>
+        <p class="how-body">Come to either of our two Oxnard locations. Our bilingual staff will greet you and assist right away.</p>
       </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Choose a Service</h3>
-        <p>We compare rates across our 8+ partner networks to find you the best deal for your transfer.</p>
+      <div class="how-step">
+        <div class="how-num">02</div>
+        <div class="how-title">Compare Rates</div>
+        <p class="how-body">We compare rates across 5+ partner networks to find you the best deal for your transfer today.</p>
       </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Send Funds</h3>
-        <p>Complete your transaction quickly and securely with a receipt and confirmation number.</p>
+      <div class="how-step">
+        <div class="how-num">03</div>
+        <div class="how-title">Send Funds</div>
+        <p class="how-body">Complete your transaction securely and receive a confirmation number and receipt immediately.</p>
       </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h3>Family Receives</h3>
-        <p>Your loved ones receive the funds at thousands of payout locations or direct bank deposit.</p>
+      <div class="how-step">
+        <div class="how-num">04</div>
+        <div class="how-title">Family Receives</div>
+        <p class="how-body">Your loved ones receive funds at thousands of pickup locations or via direct bank deposit.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SMS OPT-IN -->
-<section id="sms">
+<!-- SMS -->
+<section class="section" id="sms">
   <div class="section-inner">
-    <div class="section-tag">Stay Informed</div>
-    <h2 class="section-title">SMS Alerts & Notifications</h2>
-    <p class="section-sub">Opt in to receive exchange rate updates, promotions, and important service notifications from Luna Services.</p>
-    <div class="sms-box">
-      <h3>📲 How to Opt In</h3>
-      <p>To receive SMS alerts from Luna Services, text the following keyword to <strong style="color:#fff;">+1 (805) 303-3313</strong>:</p>
-      <div class="sms-keywords">
-        <span class="keyword">LUNA</span>
-        <span class="keyword">RATES</span>
-        <span class="keyword">START</span>
+    <p class="eyebrow">Stay Informed</p>
+    <h2 class="section-title">SMS Rate Alerts</h2>
+    <p class="section-sub">Subscribe to receive exchange rate updates, promotions, and service notifications directly to your phone.</p>
+    <div class="sms-grid">
+      <div class="sms-info">
+        <h3>How to Subscribe</h3>
+        <p>Text any of the following keywords to <strong style="color:#fff;">(805) 303-3313</strong> to opt in and start receiving alerts:</p>
+        <div class="kw-row">
+          <span class="kw">LUNA</span>
+          <span class="kw">RATES</span>
+          <span class="kw">START</span>
+          <span class="kw">DOLAR</span>
+        </div>
+        <p>Once subscribed you will receive exchange rate updates, promotional offers, and important service notifications.</p>
+        <p>To stop receiving messages at any time, reply <strong style="color:#fff;">STOP</strong>. For help, reply <strong style="color:#fff;">HELP</strong>.</p>
+        <div class="sms-disclaimer">
+          Message and Data rates may apply. Message frequency varies (typically 2–4 messages per month). ANS Wireless will never sell or share your phone number. Reply STOP to unsubscribe at any time. Reply HELP for support or contact us at (805) 844-6659. ANS Wireless is a DBA of Millennials Wireless.
+        </div>
       </div>
-      <p>Once subscribed, you will receive:</p>
-      <p>✅ &nbsp;Daily or weekly exchange rate updates<br>
-         ✅ &nbsp;Special promotions and fee waivers<br>
-         ✅ &nbsp;Important service or location updates</p>
-      <p>To stop receiving messages at any time, reply <strong style="color:var(--gold-light);">STOP</strong>. For help, reply <strong style="color:var(--gold-light);">HELP</strong>.</p>
-      <div class="sms-disclaimer">
-        <strong>Message & Data rates may apply.</strong> Message frequency varies (typically 2–4 messages per month). Luna Services will never share or sell your phone number. To opt out at any time, reply STOP to any message. For support, reply HELP or contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5e373038311e322b303f2d3b2c28373d3b2d3126303f2c3a703d3133">[email&#160;protected]</a>. Luna Services is a DBA of Millennials Wireless. SMS service is provided for informational and promotional purposes only.
+      <div class="sms-box">
+        <div class="sms-row"><span class="sms-row-label">Program Name</span><span class="sms-row-val">ANS Wireless SMS Alerts</span></div>
+        <div class="sms-row"><span class="sms-row-label">SMS Number</span><span class="sms-row-val">(805) 303-3313</span></div>
+        <div class="sms-row"><span class="sms-row-label">Frequency</span><span class="sms-row-val">2–4 msgs / month</span></div>
+        <div class="sms-row"><span class="sms-row-label">Opt-In</span><span class="sms-row-val">Text LUNA, RATES, START, or DOLAR</span></div>
+        <div class="sms-row"><span class="sms-row-label">Opt-Out</span><span class="sms-row-val">Reply STOP</span></div>
+        <div class="sms-row"><span class="sms-row-label">Help</span><span class="sms-row-val">Reply HELP</span></div>
+        <div class="sms-row"><span class="sms-row-label">Rates</span><span class="sms-row-val">Msg &amp; Data rates may apply</span></div>
+        <div class="sms-row"><span class="sms-row-label">Privacy</span><span class="sms-row-val">We never sell your number</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ABOUT -->
-<section id="about">
+<section class="section" id="about">
   <div class="section-inner">
-    <div class="section-tag">Who We Are</div>
-    <h2 class="section-title">About Luna Services</h2>
+    <p class="eyebrow">Who We Are</p>
+    <h2 class="section-title">About ANS Wireless</h2>
     <div class="about-grid">
       <div class="about-text">
-        <p><strong>Luna Services</strong> is a licensed money services business (MSB) based in Oxnard, California, operating as a DBA of <strong>Millennials Wireless</strong>. We specialize in international money transfers and remittances, serving the Oxnard community with a commitment to reliability, transparency, and personal service.</p>
-        <p>With two convenient locations and partnerships with the leading remittance networks — including Viamericas, MoneyGram, Vigo, Orlandi Valuta, Intermex, Boss Rev, Intercambio, and Golden Money — we offer our customers the widest selection of transfer options and competitive exchange rates.</p>
-        <p>We are fully licensed and compliant with all federal and state regulations, including Bank Secrecy Act (BSA) / Anti-Money Laundering (AML) requirements, ensuring that every transaction is safe and secure.</p>
+        <p><strong>ANS Wireless</strong> is a licensed money services business (MSB) operating as a DBA of <strong>Millennials Wireless</strong>, based in Oxnard, California. We specialize in international money transfers and remittances, serving the Oxnard community with a commitment to reliability, transparency, and personal service.</p>
+        <p>With two convenient locations and partnerships with the leading remittance networks — including Viamericas, MoneyGram, Vigo, Orlandi Valuta, and Intermex — we offer our customers a wide selection of transfer options and competitive exchange rates.</p>
+        <p>We are fully licensed and compliant with all federal and state regulations, including Bank Secrecy Act (BSA) and Anti-Money Laundering (AML) requirements, ensuring every transaction is safe and secure.</p>
       </div>
-      <div class="about-info">
-        <div class="info-card">
-          <h4>Legal Name</h4>
-          <p>Millennials Wireless<br>DBA Luna Services</p>
+      <div class="about-cards">
+        <div class="about-card">
+          <div class="about-card-label">Legal Name</div>
+          <div class="about-card-val">Millennials Wireless DBA ANS Wireless</div>
         </div>
-        <div class="info-card">
-          <h4>License & Compliance</h4>
-          <p>California DFPI Licensed Money Services Business. BSA/AML Compliant. FinCEN Registered MSB.</p>
+        <div class="about-card">
+          <div class="about-card-label">License &amp; Compliance</div>
+          <div class="about-card-val">CA DFPI Licensed MSB · BSA/AML Compliant · FinCEN Registered</div>
         </div>
-        <div class="info-card">
-          <h4>Locations</h4>
-          <p>2655 Saviers Road, Suite B – Oxnard, CA 93033<br>
-             1111 E Channel Islands Blvd – Oxnard, CA 93033</p>
+        <div class="about-card">
+          <div class="about-card-label">Location — Saviers</div>
+          <div class="about-card-val">2655 Saviers Road, Suite B<br/>Oxnard, CA 93033</div>
         </div>
-        <div class="info-card">
-          <h4>Hours</h4>
-          <p>Monday – Saturday: 9:00 AM – 6:00 PM<br>Sunday: 10:00 AM – 4:00 PM</p>
+        <div class="about-card">
+          <div class="about-card-label">Location — Channel Islands</div>
+          <div class="about-card-val">1111 E Channel Islands Blvd<br/>Oxnard, CA 93033</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Business Hours</div>
+          <div class="about-card-val">Mon – Sat: 9:00 AM – 6:00 PM<br/>Sun: 10:00 AM – 4:00 PM</div>
         </div>
       </div>
     </div>
@@ -509,75 +445,66 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section class="section" id="contact">
   <div class="section-inner">
-    <div class="section-tag">Get In Touch</div>
+    <p class="eyebrow">Get In Touch</p>
     <h2 class="section-title">Contact Us</h2>
     <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-card">
-          <div class="contact-icon">📍</div>
-          <div>
-            <h4>Location 1 – Saviers Road</h4>
-            <p>2655 Saviers Road, Suite B<br>Oxnard, CA 93033<br><a href="tel:+18058446659">(805) 844-6659</a></p>
-          </div>
+      <div class="contact-locations">
+        <div class="location-card">
+          <div class="loc-name">Saviers Road Location</div>
+          <div class="loc-addr">2655 Saviers Road, Suite B<br/>Oxnard, CA 93033</div>
+          <a href="tel:+18058446659" class="loc-phone">(805) 844-6659</a>
         </div>
-        <div class="contact-card">
-          <div class="contact-icon">📍</div>
-          <div>
-            <h4>Location 2 – Channel Islands</h4>
-            <p>1111 E Channel Islands Blvd<br>Oxnard, CA 93033<br><a href="tel:+18054860969">(805) 486-0969</a></p>
-          </div>
+        <div class="location-card">
+          <div class="loc-name">Channel Islands Location</div>
+          <div class="loc-addr">1111 E Channel Islands Blvd<br/>Oxnard, CA 93033</div>
+          <a href="tel:+18054860969" class="loc-phone">(805) 486-0969</a>
         </div>
-        <div class="contact-card">
-          <div class="contact-icon">📧</div>
-          <div>
-            <h4>Email</h4>
-            <a href="/cdn-cgi/l/email-protection#6f060109002f031a010e1c0a1d19060c0a1c0017010e1d0b410c0002"><span class="__cf_email__" data-cfemail="6c05020a032c0019020d1f091e1a050f091f0314020d1e08420f0301">[email&#160;protected]</span></a>
-          </div>
+        <div class="location-card">
+          <div class="loc-name">SMS Alerts Line</div>
+          <div class="loc-addr">Text DOLAR for today's exchange rate<br/>Text LUNA to subscribe to alerts</div>
+          <a href="tel:+18053033313" class="loc-phone">(805) 303-3313</a>
         </div>
-        <div class="contact-card">
-          <div class="contact-icon">📲</div>
-          <div>
-            <h4>SMS Alerts Line</h4>
-            <a href="tel:+18053033313">(805) 303-3313</a><br>
-            <small style="color:var(--muted);">Text LUNA to subscribe to rate alerts</small>
-          </div>
+        <div class="location-card">
+          <div class="loc-name">Email</div>
+          <div class="loc-addr">Sal@answireless.com</div>
         </div>
-        <div class="contact-card">
-          <div class="contact-icon">⏰</div>
-          <div>
-            <h4>Business Hours</h4>
-            <p>Mon–Sat: 9 AM – 6 PM<br>Sun: 10 AM – 4 PM</p>
-          </div>
+        <div class="location-card">
+          <div class="loc-name">Hours</div>
+          <div class="loc-addr">Mon – Sat: 9:00 AM – 6:00 PM<br/>Sun: 10:00 AM – 4:00 PM</div>
         </div>
       </div>
-      <div class="contact-form">
+      <div class="contact-form-wrap">
         <h3>Send Us a Message</h3>
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" placeholder="Your name"/>
+        <div class="form-row">
+          <div class="field">
+            <label>First Name</label>
+            <input type="text" placeholder="John"/>
+          </div>
+          <div class="field">
+            <label>Last Name</label>
+            <input type="text" placeholder="Doe"/>
+          </div>
         </div>
-        <div class="form-group">
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" placeholder="(805) 555-0000"/>
+        <div class="field">
+          <label>Phone Number</label>
+          <input type="tel" placeholder="(805) 555-0000"/>
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="you@email.com"/>
+        <div class="field">
+          <label>Email</label>
+          <input type="email" placeholder="you@email.com"/>
         </div>
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="How can we help you?"></textarea>
+        <div class="field">
+          <label>Message</label>
+          <textarea placeholder="How can we help you?"></textarea>
         </div>
-        <div class="form-group" style="display:flex;align-items:flex-start;gap:0.6rem;">
-          <input type="checkbox" id="sms_optin" name="sms_optin" style="margin-top:3px;width:auto;flex-shrink:0;"/>
-          <label for="sms_optin" style="font-weight:400;font-size:0.85rem;color:var(--muted);cursor:pointer;">
-            Yes, I would like to receive SMS alerts from Luna Services about exchange rates and promotions. I understand I can reply STOP at any time to unsubscribe.
-          </label>
+        <div class="optin-row">
+          <input type="checkbox" id="sms_optin"/>
+          <label for="sms_optin">Yes, I would like to receive SMS alerts from ANS Wireless about exchange rates and promotions. I understand I can reply STOP at any time to unsubscribe.</label>
         </div>
-        <button type="button" class="form-submit">Send Message</button>
-        <p class="sms-optin-note">By checking the SMS opt-in box, you consent to receive recurring automated marketing messages from Luna Services (DBA of Millennials Wireless) at the number provided. Message & data rates may apply. Msg frequency varies. Reply STOP to unsubscribe. Reply HELP for help. Privacy Policy applies.</p>
+        <button type="button" class="btn-submit">Send Message</button>
+        <p class="optin-fine">By checking the SMS box, you consent to receive recurring automated messages from ANS Wireless (DBA of Millennials Wireless) at the number provided. Msg &amp; data rates may apply. Reply STOP to cancel. Reply HELP for help.</p>
       </div>
     </div>
   </div>
@@ -585,37 +512,44 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <span class="nav-brand" style="font-family:'Playfair Display',serif;color:#fff;font-size:1.4rem;">Luna <span style="color:var(--gold-light);">Services</span></span>
-      <p>A DBA of Millennials Wireless. Licensed money services business serving Oxnard, CA and surrounding communities.</p>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-name" style="font-family:'Cormorant Garamond',serif;color:#fff;font-size:1.4rem;">ANS <span style="color:var(--gold-lt);">Wireless</span></span>
+        <p style="margin-top:0.5rem;">A DBA of Millennials Wireless. Licensed money services business serving Oxnard, CA and surrounding communities.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Money Transfers</a></li>
+          <li><a href="#services">Remittances</a></li>
+          <li><a href="#sms">SMS Alerts</a></li>
+          <li><a href="#how">How It Works</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact">Locations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="sms-terms.html">SMS Terms</a></li>
+          <li><a href="index-es.html">Espanol</a></li>
+        </ul>
+      </div>
     </div>
-    <div class="footer-links">
-      <h4>Services</h4>
-      <ul>
-        <li><a href="#services">Money Transfers</a></li>
-        <li><a href="#services">Remittances</a></li>
-        <li><a href="#sms">SMS Alerts</a></li>
-        <li><a href="#how">How It Works</a></li>
-      </ul>
-    </div>
-    <div class="footer-links">
-      <h4>Company</h4>
-      <ul>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact">Locations</a></li>
-      </ul>
-    </div>
-    <div class="footer-links">
-      <h4>Legal</h4>
-      <ul>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="sms-terms.html">Terms of Service</a></li>
-        <li><a href="sms-terms.html">SMS Terms</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>2025 ANS Wireless, a DBA of Millennials Wireless. All rights reserved. | Oxnard, CA | CA DFPI Licensed MSB | FinCEN Registered</p>
+      <p>SMS: Reply STOP to unsubscribe · Reply HELP for support · Msg &amp; data rates may apply</p>
     </div>
   </div>
-  <hr class="footer-divider"/>
-  <div class="footer-bottom">
-    <p>© 2025 <strong>Luna Services</strong>, a DBA of 
+</footer>
+
+</body>
+</html>
